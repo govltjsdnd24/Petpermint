@@ -6,16 +6,14 @@ import { useReserveStore } from '@/stores/reserve'
 const store = useReserveStore()
 const { VITE_APP_SERVER_URI } = import.meta.env
 
-const serviceKey =
-  'YmLOCrrmdh8DGzVmGbT0Xu9jfrsXGgdJ6GsHZ%2FDGzKW82R5KrnlJU0dar8fqQ0nYXpb9fjuYjDQx1QuSigbTkw%3D%3D'
+const serviceKey /*= map service key*/;
 const areaUrl =
   'https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=' +
   serviceKey +
   '&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json'
 
 const src =
-  '//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=4fd0aaf2d6c6b86333a1b8f0115bac76&libraries=services,clusterer,drawing'
-
+  '//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey='+/*map app key+*/'&libraries=services,clusterer,drawing'
 var geocoder
 var map = ref(null)
 const mapContainer = ref(null)

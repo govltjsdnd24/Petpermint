@@ -48,51 +48,14 @@
     nano .env
 
     //수정 사항
-    //DOMAIN_OR_PUBLIC_IP={서버의 도메인/공개 IP 주소} -> i10b303.q.ssafy.io
+    //DOMAIN_OR_PUBLIC_IP={서버의 도메인/공개 IP 주소}
     //OPENVIDU_SECRET={Openvidu 비밀번호}
     //CERTIFICATE_TYPE=letsencrypt
     //LETSENCRYPT_EMAIL={이메일}
-    //HTTPS_PORT={포트번호} ->8443
+    //HTTPS_PORT={포트번호}
 
     #Openvidu를 실행합니다
     ./openvidu
-    ```
-
-    - .env 파일
-
-    ```bash
-    # OpenVidu configuration
-    DOMAIN_OR_PUBLIC_IP=i10b303.q.ssafy.io
-    OPENVIDU_SECRET=ssafy01
-
-    CERTIFICATE_TYPE=letsencrypt
-    LETSENCRYPT_EMAIL=i10b303@ssafy.com
-
-    HTTP_PORT=8442
-    HTTPS_PORT=8443
-
-    OPENVIDU_RECORDING=false
-    OPENVIDU_RECORDING_DEBUG=false
-    OPENVIDU_RECORDING_PATH=/opt/openvidu/recordings
-    OPENVIDU_RECORDING_CUSTOM_LAYOUT=/opt/openvidu/custom-layout
-    OPENVIDU_RECORDING_PUBLIC_ACCESS=false
-    OPENVIDU_RECORDING_NOTIFICATION=publisher_moderator
-    OPENVIDU_RECORDING_AUTOSTOP_TIMEOUT=120
-
-    OPENVIDU_STREAMS_VIDEO_MAX_RECV_BANDWIDTH=1000
-    OPENVIDU_STREAMS_VIDEO_MIN_RECV_BANDWIDTH=300
-    OPENVIDU_STREAMS_VIDEO_MAX_SEND_BANDWIDTH=1000
-    OPENVIDU_STREAMS_VIDEO_MIN_SEND_BANDWIDTH=300
-
-    OPENVIDU_WEBHOOK=false
-
-    OPENVIDU_WEBHOOK_EVENTS=[sessionCreated,sessionDestroyed,participantJoined,participantLeft,webrtcConnectionCreated,webrtcConnectionDestroyed,recordingStatusChanged,filterEventDispatched,mediaNodeStatusChanged,nodeCrashed,nodeRecovered,broadcastStarted,broadcastStopped]
-
-    OPENVIDU_SESSIONS_GARBAGE_INTERVAL=900
-    OPENVIDU_SESSIONS_GARBAGE_THRESHOLD=3600
-
-    OPENVIDU_CDR=false
-    OPENVIDU_CDR_PATH=/opt/openvidu/cdr
     ```
 
   - WAS
@@ -120,20 +83,6 @@
     # BootRun을 실햄합니다
     ./gradlew bootRun
     ```
-
-  - Backend Configuration (application.properties)
-    - Openvidu
-      ![Untitled](Porting%20Manual/Untitled.png)
-      - 현재 사용 중인 Openvidu 서버 주소와 비밀번호를 설정하였습니다.
-    - SSL
-      ![Untitled](Porting%20Manual/Untitled%201.png)
-      - Web Application Server를 HTTPS에 올릴 수 있게 ssl을 사용하였습니다. key 파일과 비밀번호를 같이 설정하였습니다.
-    - Redis
-      ![Untitled](Porting%20Manual/Untitled%202.png)
-      - 이메일 인증번호 저장을 위해 Redis 주소와 포트를 설정하였습니다.
-    - S3
-      ![Untitled](Porting%20Manual/Untitled%203.png)
-      - 멀티미디어 저장을 위해 S3를 사용했습니다. S3 접속을 위한 액세스 키와 주소, 버킷 이름 등을 설정하였습니다.
 
 - FrontEnd
 
